@@ -60,7 +60,7 @@ app.post('/convert', upload.single('file'), function (req, res, next) {
     });
 });
 
-const hostname = 'localhost';
+const hostname = '0.0.0.0';
 app.listen(3000, hostname, function () {
     console.log('Listening on port 3000');
 });
