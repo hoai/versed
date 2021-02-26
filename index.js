@@ -1,5 +1,5 @@
+#!/usr/bin/env node
 'use strict';
-
 const fs = require('fs');
 const path = require('path');
 const mime = require('mime');
@@ -48,8 +48,8 @@ app.post('/convert', upload.single('file'), function (req, res, next) {
         if (context.output) {
             res.writeHead(200, {
                 'Content-Type': mime.getType(context.input.format),
-                'Content-disposition': 'attachment;filename=' 
-                    + path.basename(context.input.filename, path.extname(context.input.filename)) 
+                'Content-disposition': 'attachment;filename='
+                    + path.basename(context.input.filename, path.extname(context.input.filename))
                     + '.' + req.body.format,
                 'Content-Length': context.output.buffer.length
             });
